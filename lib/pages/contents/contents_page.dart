@@ -90,7 +90,7 @@ class _ContentsPageState extends State<ContentsPage> {
                             height: 15,
                           ),
                           Text(
-                            'Contenúdos Complementares',
+                            'Conteúdos Complementares',
                             style: TextStyle(
                               color: indexContents == 0
                                   ? context.secondaryColor
@@ -134,7 +134,7 @@ class _ContentsPageState extends State<ContentsPage> {
                               height: 15,
                             ),
                             Text(
-                              'Contenúdos BTG Pactual',
+                              'Conteúdos BTG Pactual',
                               style: TextStyle(
                                 color: indexContents == 1
                                     ? context.secondaryColor
