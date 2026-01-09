@@ -15,7 +15,7 @@ class _ContentsListTileState extends State<ContentsListTile> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 100,
+      height: 90,
       width: context.width,
       color: context.primaryColor,
       child: Padding(
@@ -27,11 +27,18 @@ class _ContentsListTileState extends State<ContentsListTile> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Container(
-                  height: 60,
-                  width: 60,
+                  height: 50,
+                  width: 50,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(8),
                     color: Colors.red,
+                  ),
+                  child: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: Image.asset(
+                      widget.contentsModel.image,
+                      fit: BoxFit.cover,
+                    ),
                   ),
                 ),
                 SizedBox(width: 12),
@@ -39,7 +46,7 @@ class _ContentsListTileState extends State<ContentsListTile> {
                   widget.contentsModel.title,
                   style: TextStyle(
                       color: context.tertiaryColor,
-                      fontSize: 18,
+                      fontSize: 20,
                       fontWeight: FontWeight.w500),
                 ),
                 Spacer(),
@@ -53,8 +60,9 @@ class _ContentsListTileState extends State<ContentsListTile> {
             Spacer(),
             Divider(
               height: 0.5,
-              color: Colors.grey,
+              color: context.primaryColor.withValues(alpha: 1.8),
             ),
+            SizedBox(height: 8),
           ],
         ),
       ),

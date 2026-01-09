@@ -1,5 +1,5 @@
 import 'package:clone_empiricus_research/app/core/ui/widgets/custom_bottom_navigation_bar.dart';
-import 'package:clone_empiricus_research/pages/contents/contents_page.dart';
+import 'package:clone_empiricus_research/pages/contents/contents_router.dart';
 import 'package:clone_empiricus_research/pages/home/home_page.dart';
 import 'package:clone_empiricus_research/pages/more_options/more_options_page.dart';
 import 'package:clone_empiricus_research/pages/warnings/warnings_page.dart';
@@ -19,15 +19,15 @@ class _EmpiricusScreensViewState extends State<EmpiricusScreensView> {
   int currentPageIndex = 0;
 
   final List<IconData> icons = [
-    Icons.home,
-    Icons.content_copy,
-    Icons.notifications,
-    Icons.more_horiz,
+    Icons.home_outlined,
+    Icons.folder_open_outlined,
+    Icons.notifications_outlined,
+    Icons.menu_outlined,
   ];
 
   final List<Widget> screens = [
     HomePage(),
-    ContentsPage(),
+    ContentsRouter().page,
     WarningsPage(),
     MoreOptionsPage(),
   ];

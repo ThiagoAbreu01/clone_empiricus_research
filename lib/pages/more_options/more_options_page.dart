@@ -53,7 +53,7 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
             color: Color.fromARGB(255, 41, 41, 41),
             child: InkWell(
               onTap: () {},
-              child: Container(
+              child: SizedBox(
                 height: 60,
                 width: 70,
                 child: Icon(
@@ -91,7 +91,7 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
                 CustomThemeSwitcher.switchToLightTheme();
               },
               controlAffinity: ListTileControlAffinity.trailing,
-              activeColor: Colors.blue,
+              activeColor: context.secondaryColor,
               title: Text(
                 'Modo Claro',
                 style: TextStyle(color: context.tertiaryColor),
@@ -117,7 +117,7 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
                 CustomThemeSwitcher.switchToDarkTheme();
               },
               controlAffinity: ListTileControlAffinity.trailing,
-              activeColor: Colors.blue,
+              activeColor: context.secondaryColor,
               title: Text(
                 'Modo Escuro',
                 style: TextStyle(color: context.tertiaryColor),

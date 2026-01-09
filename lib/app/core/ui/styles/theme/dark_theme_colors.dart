@@ -12,7 +12,7 @@ class DarkThemeColors {
 
   //! Dark:
   Color get primary => const Color.fromARGB(255, 21, 21, 21); //! #ffffff
-  Color get secondary => const Color.fromARGB(255, 238, 7, 7); //! #fec805
+  Color get secondary => const Color.fromARGB(255, 234, 38, 38); //! #fec805
   Color get tertiary => const Color.fromARGB(255, 255, 255, 255); //! #08080c
   Color get backgroundGrey => const Color.fromARGB(255, 0, 0, 0); //! #17171b
   Color get shadowColor => const Color.fromRGBO(0, 0, 0, 1); //! #17171b

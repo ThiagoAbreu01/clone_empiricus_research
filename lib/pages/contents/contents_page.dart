@@ -1,8 +1,9 @@
 import 'package:clone_empiricus_research/app/core/ui/extensions/size_screen_extension.dart';
 import 'package:clone_empiricus_research/app/core/ui/extensions/theme_extension.dart';
-import 'package:clone_empiricus_research/app/models/contents_model.dart';
-import 'package:clone_empiricus_research/pages/contents/components/contents_list_tile.dart';
+import 'package:clone_empiricus_research/pages/contents/components/contents_list_view.dart';
+import 'package:clone_empiricus_research/pages/contents/contents_controller.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 class ContentsPage extends StatefulWidget {
   const ContentsPage({super.key});
@@ -12,8 +13,21 @@ class ContentsPage extends StatefulWidget {
 }
 
 class _ContentsPageState extends State<ContentsPage> {
+  late ContentsController controller;
   int indexContents = 0;
   final ScrollController _scrollController = ScrollController();
+
+  @override
+  void initState() {
+    controller = context.read();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      controller.getListComplementaryContent();
+      controller.getListBTGPactualContent();
+      controller.getListBasicInvestorKitContent();
+    });
+
+    super.initState();
+  }
 
   @override
   void dispose() {
@@ -36,7 +50,7 @@ class _ContentsPageState extends State<ContentsPage> {
             color: Color.fromARGB(255, 41, 41, 41),
             child: InkWell(
               onTap: () {},
-              child: Container(
+              child: SizedBox(
                 height: 60,
                 width: 70,
                 child: Icon(
@@ -199,12 +213,15 @@ class _ContentsPageState extends State<ContentsPage> {
             ),
           ),
           SizedBox(height: 20),
-          ContentsListTile(
-            contentsModel: ContentsModel(
-              image: '',
-              title: 'Day One',
-            ),
+          ContentsListView(
+            index: indexContents,
           ),
+          // ContentsListTile(
+          //   contentsModel: ContentsModel(
+          //     image: 'assets/images/day_one.jpeg',
+          //     title: 'Day One',
+          //   ),
+          // ),
         ],
       ),
     );

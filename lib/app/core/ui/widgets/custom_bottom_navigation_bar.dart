@@ -246,7 +246,7 @@ class _CustomBottomNavBarState extends State<CustomBottomNavBar> {
                           Material(
                             color:
                                 i == widget.currentIndex
-                                    ? context.tertiaryColor
+                                    ? context.secondaryColor.withValues(alpha: 0.6)
                                     : context.primaryColor,
                             borderRadius: BorderRadius.circular(16),
                             child: InkWell(

@@ -9,7 +9,6 @@ class AppDarkTheme {
           primary: DarkThemeColors.i.primary,
           secondary: DarkThemeColors.i.secondary,
           tertiary: DarkThemeColors.i.tertiary,
-          background: DarkThemeColors.i.backgroundGrey,
 
           tertiaryContainer: const Color.fromARGB(255, 0, 0, 0),
           error: DarkThemeColors.i.red,
