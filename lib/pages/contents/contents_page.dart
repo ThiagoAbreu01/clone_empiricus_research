@@ -212,7 +212,7 @@ class _ContentsPageState extends State<ContentsPage> {
               ),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 10),
           ContentsListView(
             index: indexContents,
           ),

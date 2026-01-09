@@ -42,12 +42,17 @@ class _ContentsListTileState extends State<ContentsListTile> {
                   ),
                 ),
                 SizedBox(width: 12),
-                Text(
-                  widget.contentsModel.title,
-                  style: TextStyle(
+                SizedBox(
+                  width: context.width * 0.65,
+                  child: Text(
+                    widget.contentsModel.title,
+                    overflow: TextOverflow.ellipsis,
+                    style: TextStyle(
                       color: context.tertiaryColor,
-                      fontSize: 20,
-                      fontWeight: FontWeight.w500),
+                      fontSize: 18,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
                 ),
                 Spacer(),
                 Icon(

@@ -11,8 +11,8 @@ class ContentsLists {
       'title': 'Invest',
     },
     {
-      'image': 'assets/images/btg.jpg',
-      'title': 'BTG Pactual',
+      'image': 'assets/images/diretor.jpeg',
+      'title': 'Empiricus 24/07',
     },
   ];
 
@@ -25,8 +25,28 @@ class ContentsLists {
 
   final List<Map<String, String>> basicInvestorKitContentJson = [
     {
-      'image': 'assets/images/btg.jpg',
-      'title': 'BTG Pactual',
+      'image': 'assets/images/empiricus.png',
+      'title': 'Kit Básico do Investidor | Ações',
+    },
+    {
+      'image': 'assets/images/empiricus.png',
+      'title': 'Kit Básico do Investidor | Fundos Imobiliários',
+    },
+    {
+      'image': 'assets/images/empiricus.png',
+      'title': 'Kit Básico do Investidor | Renda Fixa',
+    },
+    {
+      'image': 'assets/images/empiricus.png',
+      'title': 'Kit Básico do Investidor | OPções',
+    },
+    {
+      'image': 'assets/images/empiricus.png',
+      'title': 'Kit Básico do Investidor | Renda Fixa',
+    },
+    {
+      'image': 'assets/images/empiricus.png',
+      'title': 'Kit Básico do Investidor | Cripto',
     },
   ];
 
