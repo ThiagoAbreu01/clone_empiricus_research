@@ -1,9 +1,14 @@
 import 'package:clone_empiricus_research/app/core/ui/styles/theme/dark_theme_colors.dart';
 import 'package:clone_empiricus_research/app/core/ui/styles/theme/light_theme_colors.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AppDarkTheme {
   static ThemeData get data => ThemeData.dark().copyWith(
+    // apply Montserrat as the global font family for dark theme
+    textTheme: GoogleFonts.montserratTextTheme(ThemeData.dark().textTheme),
+    primaryTextTheme:
+      GoogleFonts.montserratTextTheme(ThemeData.dark().primaryTextTheme),
         colorScheme: ColorScheme(
           brightness: Brightness.dark,
           primary: DarkThemeColors.i.primary,
@@ -41,6 +46,10 @@ class AppDarkTheme {
 
 class AppLightTheme {
   static ThemeData get data => ThemeData.light().copyWith(
+    // apply Montserrat as the global font family for light theme
+    textTheme: GoogleFonts.montserratTextTheme(ThemeData.light().textTheme),
+    primaryTextTheme:
+      GoogleFonts.montserratTextTheme(ThemeData.light().primaryTextTheme),
         colorScheme: ColorScheme(
           brightness: Brightness.light,
           primary: LightThemeColors.i.primary,

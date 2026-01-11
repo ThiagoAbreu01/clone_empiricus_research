@@ -14,7 +14,7 @@ class EmpiricusResearch extends StatelessWidget {
         valueListenable: CustomThemeSwitcher.themeNotifier,
         builder: (_, theme, __) {
           return MaterialApp(
-            title: 'Empiricus Research',
+            title: 'Empiricus',
             debugShowCheckedModeBanner: false,
             theme: theme,
             routes: {'/': (context) => const EmpiricusScreensView()},

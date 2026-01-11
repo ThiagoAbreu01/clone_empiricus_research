@@ -1,6 +1,7 @@
 import 'package:clone_empiricus_research/app/core/ui/extensions/size_screen_extension.dart';
 import 'package:clone_empiricus_research/app/core/ui/extensions/theme_extension.dart';
 import 'package:clone_empiricus_research/app/core/ui/styles/theme/custom_theme_switcher.dart';
+import 'package:clone_empiricus_research/app/core/ui/styles/theme/theme_data.dart';
 import 'package:flutter/material.dart';
 
 class MoreOptionsPage extends StatefulWidget {
@@ -17,13 +18,15 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
   void initState() {
     super.initState();
     final theme = CustomThemeSwitcher.themeNotifier.value;
-    selectedTheme = theme.colorScheme.brightness == Brightness.light ? 'light' : 'dark';
+    selectedTheme =
+        theme.colorScheme.brightness == Brightness.light ? 'light' : 'dark';
     CustomThemeSwitcher.themeNotifier.addListener(_syncSelectedWithTheme);
   }
 
   void _syncSelectedWithTheme() {
     final theme = CustomThemeSwitcher.themeNotifier.value;
-    final newSelected = theme.colorScheme.brightness == Brightness.light ? 'light' : 'dark';
+    final newSelected =
+        theme.colorScheme.brightness == Brightness.light ? 'light' : 'dark';
     if (selectedTheme != newSelected) {
       setState(() {
         selectedTheme = newSelected;
@@ -45,7 +48,6 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
         title: const Text(
           'Mais Opções',
           style: TextStyle(fontSize: 20, color: Colors.white),
-          
         ),
         backgroundColor: const Color.fromARGB(255, 41, 41, 41),
         actions: [
@@ -105,7 +107,9 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Divider(
-                color: const Color.fromARGB(255, 52, 52, 52),
+                color: CustomThemeSwitcher.themeType == AppDarkTheme.data
+                    ? context.primaryColor.withValues(alpha: 1.8)
+                    : Colors.grey[300],
                 height: 0.8,
               ),
             ),
@@ -131,7 +135,9 @@ class _MoreOptionsPageState extends State<MoreOptionsPage> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 16.0),
               child: Divider(
-                color: const Color.fromARGB(255, 52, 52, 52),
+                color: CustomThemeSwitcher.themeType == AppDarkTheme.data
+                    ? context.primaryColor.withValues(alpha: 1.8)
+                    : Colors.grey[300],
                 height: 0.8,
               ),
             ),

@@ -1,16 +1,39 @@
-# clone_empiricus_research
+# Clone Empiricus Research
 
-A new Flutter project.
+Clone Empiricus Research é um projeto demonstrativo criado para meu processo seletivo, com o objetivo de mostrar habilidades práticas em Flutter: arquitetura de tela, gerenciamento de estado, consumo de dados locais, responsividade e boas práticas de UI.
 
-## Getting Started
+## O que este projeto demonstra
 
-This project is a starting point for a Flutter application.
+- Uso de Slivers e layouts responsivos (SliverAppBar, SliverPersistentHeader, CustomScrollView).
+- Estrutura de camadas (models, data, controllers) e mapeamento de dados para modelos Dart.
+- Gerenciamento de estado com Cubit/Bloc (`HomeController` / `HomeState`).
+- Widgets reutilizáveis e tratamento responsivo de texto e imagens.
+- Integração de pacotes úteis: `google_fonts`, `intl`, `flutter_bloc`.
 
-A few resources to get you started if this is your first Flutter project:
+## Como executar
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+1. Instale as dependências:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```powershell
+flutter pub get
+```
+
+2. Rode no emulador ou dispositivo:
+
+```powershell
+flutter run
+```
+
+3. Para gerar um APK (Android):
+
+```powershell
+flutter build apk
+```
+
+> Observação: se utilizar `google_fonts` com cache, pode ser necessário adicionar o plugin `path_provider` (já incluído) e reiniciar a aplicação totalmente.
+
+## Estrutura principal
+
+- `lib/app/data` — fontes de dados e fixtures (notícias, lives).
+- `lib/app/models` — modelos tipados para domínio (NewsModel, LivesModel).
+- `lib/pages/home` — telas, componentes e controller (UI + lógica de apresentação).

@@ -1,5 +1,7 @@
 import 'package:clone_empiricus_research/app/core/ui/extensions/size_screen_extension.dart';
 import 'package:clone_empiricus_research/app/core/ui/extensions/theme_extension.dart';
+import 'package:clone_empiricus_research/app/core/ui/styles/theme/custom_theme_switcher.dart';
+import 'package:clone_empiricus_research/app/core/ui/styles/theme/theme_data.dart';
 import 'package:clone_empiricus_research/app/models/contents_model.dart';
 import 'package:flutter/material.dart';
 
@@ -65,7 +67,9 @@ class _ContentsListTileState extends State<ContentsListTile> {
             Spacer(),
             Divider(
               height: 0.5,
-              color: context.primaryColor.withValues(alpha: 1.8),
+              color: CustomThemeSwitcher.themeType == AppDarkTheme.data
+              ? context.primaryColor.withValues(alpha: 1.8)
+              : Colors.grey[300],
             ),
             SizedBox(height: 8),
           ],

@@ -1,4 +1,4 @@
-import 'package:clone_empiricus_research/app/data/contents_lists.dart';
+import 'package:clone_empiricus_research/app/data/contents_data.dart';
 import 'package:clone_empiricus_research/pages/contents/contents_controller.dart';
 import 'package:clone_empiricus_research/pages/contents/contents_page.dart';
 import 'package:flutter/material.dart';
@@ -8,11 +8,11 @@ class ContentsRouter {
   Widget get page => MultiProvider(
         providers: [
           Provider(
-            create: (context) => ContentsLists(),
+            create: (context) => ContentsData(),
           ),
           Provider(
             create: (context) => ContentsController(
-              contentsLists: context.read(),
+              contentsData: context.read(),
             ),
           ),
         ],

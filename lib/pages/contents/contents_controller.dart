@@ -2,14 +2,14 @@
 
 import 'package:bloc/bloc.dart';
 
-import 'package:clone_empiricus_research/app/data/contents_lists.dart';
+import 'package:clone_empiricus_research/app/data/contents_data.dart';
 import 'package:clone_empiricus_research/app/models/contents_model.dart';
 import 'package:clone_empiricus_research/pages/contents/contents_state.dart';
 
 class ContentsController extends Cubit<ContentsState> {
-  final ContentsLists contentsLists;
+  final ContentsData contentsData;
   ContentsController({
-    required this.contentsLists,
+    required this.contentsData,
   }) : super(
           ContentsState(
             status: ContentsStatus.initial,
@@ -23,7 +23,7 @@ class ContentsController extends Cubit<ContentsState> {
     try {
       emit(state.copyWith(status: ContentsStatus.loading));
 
-      final list = await contentsLists.getListComplementaryContent();
+      final list = await contentsData.getListComplementaryContent();
 
       emit(
         state.copyWith(
@@ -47,7 +47,7 @@ class ContentsController extends Cubit<ContentsState> {
     try {
       emit(state.copyWith(status: ContentsStatus.loading));
 
-      final list = await contentsLists.getListBTGPactualContent();
+      final list = await contentsData.getListBTGPactualContent();
 
       emit(
         state.copyWith(
@@ -71,7 +71,7 @@ class ContentsController extends Cubit<ContentsState> {
     try {
       emit(state.copyWith(status: ContentsStatus.loading));
 
-      final list = await contentsLists.getListBasicInvestorKitContent();
+      final list = await contentsData.getListBasicInvestorKitContent();
       
       emit(
         state.copyWith(

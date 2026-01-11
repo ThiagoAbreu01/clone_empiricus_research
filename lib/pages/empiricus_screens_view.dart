@@ -1,6 +1,6 @@
 import 'package:clone_empiricus_research/app/core/ui/widgets/custom_bottom_navigation_bar.dart';
 import 'package:clone_empiricus_research/pages/contents/contents_router.dart';
-import 'package:clone_empiricus_research/pages/home/home_page.dart';
+import 'package:clone_empiricus_research/pages/home/home_router.dart';
 import 'package:clone_empiricus_research/pages/more_options/more_options_page.dart';
 import 'package:clone_empiricus_research/pages/warnings/warnings_page.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +26,7 @@ class _EmpiricusScreensViewState extends State<EmpiricusScreensView> {
   ];
 
   final List<Widget> screens = [
-    HomePage(),
+    HomeRouter().page,
     ContentsRouter().page,
     WarningsPage(),
     MoreOptionsPage(),

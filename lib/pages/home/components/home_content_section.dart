@@ -1,62 +1,78 @@
+import 'package:clone_empiricus_research/app/core/ui/extensions/size_screen_extension.dart';
+import 'package:clone_empiricus_research/app/core/ui/extensions/theme_extension.dart';
+import 'package:clone_empiricus_research/pages/home/components/lives/next_lives.dart';
+import 'package:clone_empiricus_research/pages/home/components/news/explain/explain.dart';
+import 'package:clone_empiricus_research/pages/home/components/news/money_times/money_times.dart';
+import 'package:clone_empiricus_research/pages/home/components/news/your_money/your_money.dart';
+import 'package:clone_empiricus_research/pages/home/home_controller.dart';
+import 'package:clone_empiricus_research/pages/home/home_state.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 
 class HomeContentSection extends StatelessWidget {
-  const HomeContentSection({super.key});
+  final int pageIndex;
+
+  const HomeContentSection({super.key, this.pageIndex = 0});
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          const Text(
-            'Bem-vindo',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 18,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 12),
-          Container(
-            height: 120,
-            decoration: BoxDecoration(
-              color: Colors.grey[850],
-              borderRadius: BorderRadius.circular(12),
-            ),
-          ),
-          const SizedBox(height: 16),
-          const Text(
-            'Seções',
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 16,
-              fontWeight: FontWeight.w600,
-            ),
-          ),
-          const SizedBox(height: 8),
-          for (var i = 0; i < 5; i++)
+    if (pageIndex == 0) {
+      return SizedBox.shrink();
+    }
+
+    return BlocBuilder<HomeController, HomeState>(
+      builder: (context, state) {
+        return Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            const SizedBox(height: 10),
             Container(
-              margin: const EdgeInsets.only(bottom: 12),
-              height: 56,
-              decoration: BoxDecoration(
-                color: Colors.grey[800],
-                borderRadius: BorderRadius.circular(8),
-              ),
-              child: const Align(
-                alignment: Alignment.centerLeft,
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 12),
-                  child: Text(
-                    'Item',
-                    style: TextStyle(color: Colors.white),
+              height: 50,
+              width: context.width,
+              color: context.primaryColor,
+              child: Row(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                    child: Icon(
+                      Icons.menu,
+                      color: context.tertiaryColor,
+                      size: 30,
+                    ),
                   ),
-                ),
+                  Text(
+                    'Seções',
+                    style: TextStyle(
+                      color: context.tertiaryColor,
+                      fontSize: 16,
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  Spacer(),
+                  Icon(
+                    Icons.chevron_right,
+                    color: context.secondaryColor,
+                    size: 35,
+                  ),
+                  const SizedBox(
+                    width: 12,
+                  ),
+                ],
               ),
             ),
-        ],
-      ),
+            const SizedBox(height: 10),
+            NextLives(listLives: state.listLives),
+            const SizedBox(height: 10),
+            MoneyTimes(moneyTimesNews: state.listMoneyTimesNews),
+            const SizedBox(height: 10),
+            YourMoney(yourMoneyNews: state.listYourMoneyNews),
+            const SizedBox(height: 10),
+            Explain(explainNews: state.listExplain),
+            const SizedBox(height: 10),
+          ],
+        );
+      },
     );
   }
 }
