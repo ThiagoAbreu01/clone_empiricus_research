@@ -36,4 +36,4 @@ flutter build apk
 
 - `lib/app/data` — fontes de dados e fixtures (notícias, lives).
 - `lib/app/models` — modelos tipados para domínio (NewsModel, LivesModel).
-- `lib/pages/home` — telas, componentes e controller (UI + lógica de apresentação).
+- `lib/pages/` — telas, componentes e controller (UI + lógica de apresentação).
