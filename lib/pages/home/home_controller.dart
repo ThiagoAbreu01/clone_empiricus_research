@@ -2,6 +2,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:clone_empiricus_research/app/data/lives_data.dart';
 import 'package:clone_empiricus_research/app/data/news_data.dart';
+import 'package:clone_empiricus_research/app/models/news_model.dart';
 import 'package:clone_empiricus_research/pages/home/home_state.dart';
 
 class HomeController extends Cubit<HomeState>{
@@ -85,6 +86,26 @@ class HomeController extends Cubit<HomeState>{
       );
     } catch (e) {
       emit(state.copyWith(status: HomeStatus.failure));
+    }
+  }
+  
+  Future<List<NewsModel>> loadAllNews() async {
+    try {
+      emit(state.copyWith(status: HomeStatus.loading));
+
+      final news = await newsData.getListNews();
+
+      emit(
+        state.copyWith(
+          status: HomeStatus.success,
+          listExplain: news,
+        ),
+      );
+
+      return news;
+    } catch (e) {
+      emit(state.copyWith(status: HomeStatus.failure));
+      return [];
     }
   }
 }

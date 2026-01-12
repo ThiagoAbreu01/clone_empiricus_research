@@ -4,32 +4,36 @@ class NewsData {
   final List<Map<String, String>> moneyTimesJson = [
     {
       'site_name': 'Money Times - 2 horas atrás',
-      'description': 'Mega-Sena: Concurso de sábado fica sem vencedor e acumula; confira',
+      'description':
+          'Mega-Sena: Concurso de sábado fica sem vencedor e acumula; confira',
       'image_site': 'assets/images/money_times.png',
       'image_news': 'assets/images/news_money_times_1.png',
     },
     {
       'site_name': 'Money Times - 2 horas atrás',
-      'description': 'Invest: Especial sobre fundos e estratégias para pequenos investidores',
+      'description':
+          'Invest: Especial sobre fundos e estratégias para pequenos investidores',
       'image_site': 'assets/images/money_times.png',
       'image_news': 'assets/images/news_money_times_2.png',
     },
     {
       'site_name': 'Money Times - 3 horas atrás',
-      'description': 'Empiricus: Análise da carteira recomendada e seus principais ativos',
+      'description':
+          'Empiricus: Análise da carteira recomendada e seus principais ativos',
       'image_site': 'assets/images/money_times.png',
       'image_news': 'assets/images/news_money_times_3.png',
     },
     {
       'site_name': 'Money Times - 3 horas atrás',
-      'description': 'Entrevista com diretor: perspectivas de mercado e oportunidades para 2026',
+      'description':
+          'Entrevista com diretor: perspectivas de mercado e oportunidades para 2026',
       'image_site': 'assets/images/money_times.png',
       'image_news': 'assets/images/news_money_times_4.png',
     },
   ];
 
   final List<Map<String, String>> yourMoneyJson = [
-   {
+    {
       'site_name': 'Seu Dinheiro - 5 horas atrás',
       'description': 'Guia prático de investimentos para começar com segurança',
       'image_site': 'assets/images/seu_dinheiro.png',
@@ -37,19 +41,22 @@ class NewsData {
     },
     {
       'site_name': 'Seu Dinheiro - 5 horas atrás',
-      'description': 'Como montar uma carteira diversificada em passos práticos',
+      'description':
+          'Como montar uma carteira diversificada em passos práticos',
       'image_site': 'assets/images/seu_dinheiro.png',
       'image_news': 'assets/images/news_seu_dinheiro_2.png',
     },
     {
       'site_name': 'Seu Dinheiro - 6 horas atrás',
-      'description': 'Resumo do evento 24/07 com dicas práticas para investidores',
+      'description':
+          'Resumo do evento 24/07 com dicas práticas para investidores',
       'image_site': 'assets/images/seu_dinheiro.png',
       'image_news': 'assets/images/news_seu_dinheiro_3.png',
     },
     {
       'site_name': 'Seu Dinheiro - 7 horas atrás',
-      'description': 'Painel com especialistas debate cenários e estratégias de 2026',
+      'description':
+          'Painel com especialistas debate cenários e estratégias de 2026',
       'image_site': 'assets/images/seu_dinheiro.png',
       'image_news': 'assets/images/news_seu_dinheiro_4.png',
     },
@@ -58,27 +65,47 @@ class NewsData {
   final List<Map<String, String>> explainJson = [
     {
       'site_name': 'Explica - 1 mês atrás',
-      'description': 'Conceitos essenciais de mercado explicados de forma simples e direta',
+      'description':
+          'Conceitos essenciais de mercado explicados de forma simples e direta',
       'image_site': 'assets/images/empiricus_logo.png',
       'image_news': 'assets/images/explain_1.png',
     },
     {
       'site_name': 'Explica - 1 mês atrás',
-      'description': 'Principais termos financeiros que todo investidor deve conhecer',
+      'description':
+          'Principais termos financeiros que todo investidor deve conhecer',
       'image_site': 'assets/images/empiricus_logo.png',
       'image_news': 'assets/images/explain_2.png',
     },
     {
       'site_name': 'Explica - 1 mês atrás',
-      'description': 'Análise prática sobre decisões de carteira e gestão de risco',
+      'description':
+          'Análise prática sobre decisões de carteira e gestão de risco',
       'image_site': 'assets/images/empiricus_logo.png',
       'image_news': 'assets/images/explain_3.png',
     },
     {
       'site_name': 'Explica - 1 mês atrás',
-      'description': 'Entrevistas e explicações sobre estratégias para diferentes perfis',
+      'description':
+          'Entrevistas e explicações sobre estratégias para diferentes perfis',
       'image_site': 'assets/images/empiricus_logo.png',
       'image_news': 'assets/images/explain_4.png',
+    },
+  ];
+
+  final List<Map<String, String>> newsItems = [
+    {
+      'site_name': 'Money Times',
+      'description': 'Embraer (EMBJ3) voou alto em 2025 segundo BTG Pactual',
+      'image_site': 'assets/images/news_money_times_1.png',
+      'image_news': 'assets/images/news_money_times_1.png',
+    },
+    {
+      'site_name': 'Faça seu cadastro',
+      'description':
+          'Invest: Especial sobre fundos e estratégias para pequenos investidores — ideias práticas para diversificar a carteira',
+      'image_site': 'assets/images/news_money_times_2.png',
+      'image_news': 'assets/images/news_money_times_2.png',
     },
   ];
 
@@ -96,5 +123,9 @@ class NewsData {
 
   Future<List<NewsModel>> getListExplain() async {
     return _toModels(explainJson);
+  }
+
+  Future<List<NewsModel>> getListNews() async {
+    return _toModels(newsItems);
   }
 }
